@@ -1,0 +1,71 @@
+<aiml version="2.0">
+    <!-- Greeting -->
+    <category>
+        <pattern>HELLO</pattern>
+        <template>Hello! How can I help you today?</template>
+    </category>
+
+    <category>
+        <pattern>HI</pattern>
+        <template>Hi there! How can I assist you?</template>
+    </category>
+
+    <!-- Asking for the bot's name -->
+    <category>
+        <pattern>WHAT IS YOUR NAME?</pattern>
+        <template>I'm ChatBot, nice to meet you!</template>
+    </category>
+
+    <!-- Remembering User's Name -->
+    <category>
+        <pattern>MY NAME IS *</pattern>
+        <template>
+            Nice to meet you, <set name="username"><star/></set>!
+        </template>
+    </category>
+
+    <category>
+        <pattern>WHAT IS MY NAME?</pattern>
+        <template>
+            <think><get name="username"/></think>
+            <get name="username"/>! That's your name, right?
+        </template>
+    </category>
+
+    <!-- Chatbot Personality -->
+    <category>
+        <pattern>WHAT IS YOUR FAVORITE COLOR?</pattern>
+        <template>
+            <random>
+                <li>I like blue!</li>
+                <li>Red is nice, but I also like green.</li>
+                <li>I don't have eyes, but if I did, I'd love purple!</li>
+            </random>
+        </template>
+    </category>
+
+    <category>
+        <pattern>HOW ARE YOU?</pattern>
+        <template>
+            <random>
+                <li>I'm just a bot, but I'm doing great! How about you?</li>
+                <li>I'm functioning as expected! How's your day going?</li>
+                <li>I'm here to chat! What’s on your mind?</li>
+            </random>
+        </template>
+    </category>
+
+    <!-- Chatbot Capabilities -->
+    <category>
+        <pattern>WHAT CAN YOU DO?</pattern>
+        <template>
+            I can chat with you, answer basic questions, and remember simple things like your name! Try asking "What is my name?"
+        </template>
+    </category>
+
+    <!-- Default Response -->
+    <category>
+        <pattern>*</pattern>
+        <template>Sorry, I didn't understand that. Could you please rephrase?</template>
+    </category>
+</aiml>
